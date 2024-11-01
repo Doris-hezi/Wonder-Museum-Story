@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bc5ngksy867bs"]
+[gd_scene load_steps=29 format=3 uid="uid://bc5ngksy867bs"]
 
 [ext_resource type="Texture2D" uid="uid://cyiy7ad5y3jdk" path="res://Assets/Legacy Fantasy - Kingdom Fortress - Update/Background/02.png" id="1_8hc7i"]
 [ext_resource type="Texture2D" uid="uid://bouqenhk83kx0" path="res://Assets/Legacy Fantasy - Kingdom Fortress - Update/Background/Background.2-export.png" id="2_bokoj"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cegybjqrmk68p" path="res://Scenes/platform.tscn" id="6_rgy8g"]
 [ext_resource type="PackedScene" uid="uid://bslkwmaaiqlh5" path="res://Player/character_body_2d.tscn" id="7_otlba"]
 [ext_resource type="PackedScene" uid="uid://jppedv1wrd17" path="res://Scenes/killzone.tscn" id="8_2vilr"]
+[ext_resource type="PackedScene" uid="uid://diauk8y5lmdfh" path="res://Scenes/checkpoint1-h.tscn" id="9_elwtx"]
+[ext_resource type="PackedScene" uid="uid://ccaqsdj6psa6a" path="res://Scenes/checkpoint finallevel transit.tscn" id="10_d3y6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wf11p"]
 texture = ExtResource("1_8hc7i")
@@ -2255,7 +2257,7 @@ libraries = {
 autoplay = "1"
 
 [node name="Player" parent="." instance=ExtResource("7_otlba")]
-position = Vector2(1695, -201)
+position = Vector2(-41, 73)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -2280,3 +2282,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xje8y")
 }
 autoplay = "new_animation"
+
+[node name="Checkpoint" parent="." instance=ExtResource("9_elwtx")]
+position = Vector2(743, -210)
+
+[node name="Checkpoint finallevel transit" parent="." instance=ExtResource("10_d3y6b")]
+position = Vector2(2042, -52)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dmabsknr33la6"]
+[gd_scene load_steps=32 format=3 uid="uid://dmabsknr33la6"]
 
 [ext_resource type="Texture2D" uid="uid://b85dyuvrar7fk" path="res://Assets/hidden Legacy Fantay - Lost Glades/Assets/Tiles.png" id="1_k0yfm"]
 [ext_resource type="Texture2D" uid="uid://by71lxj2piw1r" path="res://Assets/hidden Legacy Fantay - Lost Glades/Assets/Tree.png" id="2_nlgr0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bor7ovb5rpdfr" path="res://Assets/hidden Legacy Fantay - Lost Glades/Background/Background_01.png" id="6_ch76h"]
 [ext_resource type="Texture2D" uid="uid://5p3sjod2jede" path="res://Assets/hidden Legacy Fantay - Lost Glades/Background/Background_02.png" id="7_b7ycb"]
 [ext_resource type="PackedScene" uid="uid://jppedv1wrd17" path="res://Scenes/killzone.tscn" id="8_cd4gk"]
+[ext_resource type="PackedScene" uid="uid://q8q3pp6vwmq7" path="res://Scenes/checkpointh-1.tscn" id="9_k835h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgfdw"]
 texture = ExtResource("5_abn4m")
@@ -6184,7 +6185,7 @@ layer_4/name = "Layer4"
 layer_4/tile_data = PackedInt32Array(-720832, 524288, 3, -655296, 524288, 4, -589767, 524288, 6, -65532, 524288, 6, -65530, 524288, 11, 6, 524288, 12, -65529, 589824, 11, -262123, 524288, 11, -196587, 524288, 12, -262122, 589824, 11, -786366, 458752, 13, -720830, 458752, 14, -786365, 524288, 13, -720829, 524288, 14, -982968, 589824, 13, -917432, 589824, 14, -1179573, 458752, 13, -1114037, 458752, 14, -1245108, 524288, 12, -1179572, 524288, 13, -1114036, 524288, 14, -1638279, 589824, 13, -1572743, 589824, 14, -1245070, 458752, 13, -1179534, 458752, 14, -1245069, 524288, 13, -1179533, 524288, 14, -1113990, 655360, 11, -1048454, 655360, 12, -982918, 655360, 13, -1179525, 720896, 10, -1113989, 720896, 11, -1048453, 720896, 12, -982917, 720896, 13, -786302, 786432, 11, -720766, 786432, 12, -655230, 786432, 13, -851837, 851968, 10, -786301, 851968, 11, -720765, 851968, 12, -655229, 851968, 13, -589757, 786432, 11, -524221, 786432, 12, -458685, 786432, 13, -655292, 851968, 10, -589756, 851968, 11, -524220, 851968, 12, -458684, 851968, 13, -655284, 786432, 11, -589748, 786432, 12, -524212, 786432, 13, -720819, 851968, 10, -655283, 851968, 11, -589747, 851968, 12, -524211, 851968, 13, -393191, 655360, 11, -327655, 655360, 12, -262119, 655360, 13, -458726, 720896, 10, -393190, 720896, 11, -327654, 720896, 12, -262118, 720896, 13, -131063, 524288, 3, -65527, 524288, 4, -5, 524288, 11, -4, 589824, 11, -655302, 524288, 11, -655301, 589824, 11, -982922, 524288, 11, -982921, 589824, 11, -851840, 524288, 6, -982923, 524288, 6)
 
 [node name="Player" parent="." instance=ExtResource("3_w5iq7")]
-position = Vector2(1230, -172)
+position = Vector2(0, -8)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -6230,3 +6231,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_x52ir")
+
+[node name="Checkpoint levelh-1" parent="." instance=ExtResource("9_k835h")]
+position = Vector2(2103, -363)
