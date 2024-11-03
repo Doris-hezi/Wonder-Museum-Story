@@ -2256,17 +2256,6 @@ libraries = {
 }
 autoplay = "1"
 
-[node name="Player" parent="." instance=ExtResource("7_otlba")]
-position = Vector2(-41, 73)
-collision_layer = 2
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -32)
-zoom = Vector2(3, 3)
-limit_bottom = 152
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="Killzone" parent="." instance=ExtResource("8_2vilr")]
 position = Vector2(216, 169)
 collision_mask = 2
@@ -2283,8 +2272,14 @@ libraries = {
 }
 autoplay = "new_animation"
 
-[node name="Checkpoint" parent="." instance=ExtResource("9_elwtx")]
-position = Vector2(743, -210)
-
 [node name="Checkpoint finallevel transit" parent="." instance=ExtResource("10_d3y6b")]
-position = Vector2(2042, -52)
+position = Vector2(2029, -52)
+
+[node name="Player" parent="." instance=ExtResource("7_otlba")]
+position = Vector2(943, -152)
+
+[node name="Checkpoint level1-h" parent="." instance=ExtResource("9_elwtx")]
+position = Vector2(746, -209)
+
+[node name="Marker2D" type="Marker2D" parent="Checkpoint level1-h"]
+position = Vector2(147, 51)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bslkwmaaiqlh5"]
+[gd_scene load_steps=9 format=3 uid="uid://bslkwmaaiqlh5"]
 
 [ext_resource type="Texture2D" uid="uid://gvufudjrja4h" path="res://Assets/Screenshot_2024-10-11_16259572.png" id="1_6hrf5"]
 
@@ -9,6 +9,14 @@ script/source = "extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	print(GlobalInfo.overwriteplayer_pos)
+	if GlobalInfo.overwriteplayer_pos == Vector2(0,0):
+		pass
+	else:
+		position = GlobalInfo.overwriteplayer_pos
+		GlobalInfo.overwriteplayer_pos=Vector2(0,0)
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,9 +40,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 "
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bq6vx"]
-radius = 6.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vry17"]
 atlas = ExtResource("1_6hrf5")
@@ -72,19 +77,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1tsbb"]
-radius = 4.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufxj0"]
+radius = 5.0
+height = 10.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 script = SubResource("GDScript_ggb2d")
-
-[node name="Area2D" type="Area2D" parent="."]
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -15)
-shape = SubResource("CapsuleShape2D_bq6vx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -19)
@@ -95,4 +94,11 @@ frame_progress = 0.691183
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
-shape = SubResource("CircleShape2D_1tsbb")
+shape = SubResource("CapsuleShape2D_ufxj0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -32)
+zoom = Vector2(3, 3)
+limit_bottom = 152
+limit_smoothed = true
+position_smoothing_enabled = true
